@@ -15,10 +15,38 @@ clientSystem.initialize = function ()
 
 	this.listenForEvent("minecraft:client_entered_world", (eventData) =>
 		this.onClientEnteredWorld(eventData));
+	this.listenForEvent("minecraft:ui_event",
+		(eventData) => this.onUIMessage(eventData));
 };
 
 clientSystem.update = () =>
 {
+};
+
+clientSystem.onUIMessage = function (eventDataObject)
+{
+	const chatEventData = clientSystem
+			.createEventData("minecraft:display_chat_event");
+	chatEventData.data.message = "ui pressed";
+	clientSystem
+		.broadcastEvent("minecraft:display_chat_event", chatEventData);
+    //Get the data out of the event data object.
+		//If there's no data, nothing to do inside here
+    let eventData = eventDataObject.data;
+    if(!eventData)
+		{
+        return;
+    }
+    // UI engine sent us an event.
+    else if (eventData === "startPressed")
+		{
+      // Start or restart button was pressed on a screen. Start up the game.
+			const chatEventData = clientSystem
+					.createEventData("minecraft:display_chat_event");
+			chatEventData.data.message = "start pressed";
+			clientSystem
+				.broadcastEvent("minecraft:display_chat_event", chatEventData);
+    }
 };
 
 clientSystem.onClientEnteredWorld = function (eventData)
@@ -27,7 +55,11 @@ clientSystem.onClientEnteredWorld = function (eventData)
     let loadEventData = this.createEventData("minecraft:load_ui");
     loadEventData.data.path = "settings.html";
     loadEventData.data.options.is_showing_menu = false;
-    loadEventData.data.options.absorbs_input = true;
+    // loadEventData.data.options.absorbs_input = true;
+		loadEventData.data.options.always_accepts_input  = true;
+		// loadEventData.data.options.render_game_behind = false;
+		// loadEventData.data.options.should_steal_mouse = true;
+		// loadEventData.data.options.force_render_below = true;
     clientSystem.broadcastEvent("minecraft:load_ui", loadEventData);
 
     // Notify the server script that the player has finished loading in.
