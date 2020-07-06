@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "souls Resources",
+    "description": "dark soulsy masochism ",
+    "uuid": "9e34c4bb-7cba-4ec5-88c3-26fbbf48fabc",
+    "version": [
+      1,
+      0,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Resources for souls",
+      "type": "resources",
+      "uuid": "b0ac279b-fd5a-4d07-aff9-8edec8b4d87e",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "souls Behaviors",
+    "description": "dark soulsy masochism ",
+    "uuid": "f77ca1d6-99d0-428c-87e5-76f112d5e148",
+    "version": [
+      1,
+      0,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "behaviours for souls",
+      "type": "client_data",
+      "uuid": "0d347509-e7f8-4e16-bdce-05be66ecfd6d",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "9e34c4bb-7cba-4ec5-88c3-26fbbf48fabc",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}
