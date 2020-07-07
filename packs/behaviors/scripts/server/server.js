@@ -38,7 +38,7 @@ serverSystem.initialize = () =>
 
 let tickCount = 0;
 dcm.setDayLength(200);
-dcm.setNightLength(40);
+dcm.setNightLength(200);
 serverSystem.update = function()
 {
 	tickCount++;
