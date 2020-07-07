@@ -4,11 +4,11 @@ const dcm = require("./DaylightCycleManager")(serverSystem);
 
 const onDeath = () =>
 {
-	const chatEventData = serverSystem
-			.createEventData("minecraft:display_chat_event");
-		chatEventData.data.message = "yowch";
-		serverSystem
-			.broadcastEvent("minecraft:display_chat_event", chatEventData);
+	// const chatEventData = serverSystem
+	// 		.createEventData("minecraft:display_chat_event");
+	// 	chatEventData.data.message = "yowch";
+	// 	serverSystem
+	// 		.broadcastEvent("minecraft:display_chat_event", chatEventData);
 };
 
 // Setup which events to listen for
