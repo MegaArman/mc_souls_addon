@@ -52,15 +52,15 @@ clientSystem.onUIMessage = function (eventDataObject)
 clientSystem.onClientEnteredWorld = function (eventData)
  {
     // Client has entered the world, show the starting screen
-    let loadEventData = this.createEventData("minecraft:load_ui");
-    loadEventData.data.path = "settings.html";
-    loadEventData.data.options.is_showing_menu = false;
-    // loadEventData.data.options.absorbs_input = true;
-		loadEventData.data.options.always_accepts_input  = true;
-		// loadEventData.data.options.render_game_behind = false;
-		// loadEventData.data.options.should_steal_mouse = true;
-		// loadEventData.data.options.force_render_below = true;
-    clientSystem.broadcastEvent("minecraft:load_ui", loadEventData);
+    // let loadEventData = this.createEventData("minecraft:load_ui");
+    // loadEventData.data.path = "settings.html";
+    // loadEventData.data.options.is_showing_menu = false;
+    // // loadEventData.data.options.absorbs_input = true;
+		// loadEventData.data.options.always_accepts_input  = true;
+		// // loadEventData.data.options.render_game_behind = false;
+		// // loadEventData.data.options.should_steal_mouse = true;
+		// // loadEventData.data.options.force_render_below = true;
+    // clientSystem.broadcastEvent("minecraft:load_ui", loadEventData);
 
     // Notify the server script that the player has finished loading in.
   //   let clientEnteredEventData = this.createEventData("rpg_game:client_entered_world");
